@@ -75,14 +75,14 @@ export default function Cam({route, navigation}) {
 
       if(enviando){
         return( 
-        <View style={{ flex: 1 }}>  
+        <View style={ styles.container}>  
         <Text>Enviando Imagem</Text>
         </View>
         );
       }
 
   return (
-    <View style={styles.container}>  
+    <View style={{ flex: 1 }}>  
     
       <Camera style={{ flex: 1 }} type={type} ref={cameraRef}>
         <View style={styles.button}>          
