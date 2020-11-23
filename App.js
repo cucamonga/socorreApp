@@ -1,13 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import HomeScreen from './screens/home';
+import CameraScreen from './screens/camera';
+import AddressScreen from './screens/address';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Socorre">
+        <Stack.Screen name="Socorre" component={HomeScreen} />
+        <Stack.Screen name="Cam" component={CameraScreen} />
+        <Stack.Screen name="Local" component={AddressScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
