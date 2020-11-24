@@ -80,7 +80,7 @@ export default function Address({route, navigation}) {
   fetch('https://digoboratv.000webhostapp.com/socorre/api/insert.php', requestOptions)
       .then(async response => {
         alert("Ocorrencia aberta");
-        navigation.navigate('Home');
+        navigation.navigate('Socorre');
           /*const data = await response.json();
 
       
