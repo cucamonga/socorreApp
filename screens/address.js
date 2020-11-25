@@ -15,6 +15,7 @@ export default function Address({route, navigation}) {
   const [nome, setNome] = useState('Anonimo');
   const [tel, setTel] = useState(null);
   const [descricao, setDesc] = useState(null);
+  const [log, setLog] = useState(null);
 
   useEffect(() =>{
 
@@ -79,8 +80,9 @@ export default function Address({route, navigation}) {
 
   fetch('https://digoboratv.000webhostapp.com/socorre/api/insert.php', requestOptions)
       .then(async response => {
-        alert("Ocorrencia aberta");
-        navigation.navigate('Socorre');
+        setLog("OK");
+        //alert("Ocorrencia aberta");
+        navigation.navigate('Finalizado');
           /*const data = await response.json();
 
       
@@ -101,6 +103,7 @@ export default function Address({route, navigation}) {
 
   return (
     <View style={styles.container}>
+      
       <Text>Endereço</Text>
       
       <Text>{local['road']} </Text>    
@@ -108,11 +111,11 @@ export default function Address({route, navigation}) {
       <Text>{local['city']} </Text> 
       <Text>{local['state']} </Text>
       <Text>Nome:</Text>
-      <TextInput onChangeText={text => setNome(text)}></TextInput>
+      <TextInput style={styles.textinput} onChangeText={text => setNome(text)}></TextInput>
       <Text>Tel:</Text>
-      <TextInput onChangeText={text => setTel(text)}></TextInput>
+      <TextInput style={styles.textinput} onChangeText={text => setTel(text)}></TextInput>
       <Text>Descrição:</Text>
-      <TextInput onChangeText={text => setDesc(text)}></TextInput>
+      <TextInput style={styles.textinput} onChangeText={text => setDesc(text)}></TextInput>
       <Button title="Próximo" onPress={() =>{ abrirOcorrencia(navigation)}}/>
     </View>
   );
@@ -127,7 +130,9 @@ const styles = StyleSheet.create({
   },
   textinput:{
      height: 40, 
+     width: 200,
         borderColor: 'gray', 
-        borderWidth: 1 
+        borderWidth: 1, 
+        marginBottom: 5,
   }
 });
