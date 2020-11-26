@@ -8,7 +8,7 @@ export default function Home({navigation}) {
     <View style={styles.container}>
       <Text></Text>      
       <Button title="Abrir Chamado"
-      onPress={() => navigation.navigate('Cam')} />
+      onPress={() => navigation.navigate('Imagens')} />
     </View>
   );
 }
